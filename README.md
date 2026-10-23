@@ -14,7 +14,7 @@ OpsPilot demonstrates an end-to-end incident response loop: ingest an observabil
 - A responsive operator dashboard and synthetic incident flow
 - FastAPI/OpenAPI, Docker Compose, tests, Ruff, and CodeQL
 
-## Run locally
+## Quick start
 
 ```bash
 git clone https://github.com/DivyanBabbar/opspilot.git
@@ -26,6 +26,15 @@ opspilot
 ```
 
 Visit <http://127.0.0.1:8000> and click **Load demo incident**. The incident page shows the anomaly evidence, score, recommended action, and its state. Approve the plan, then execute the simulation. API documentation is at `/docs`.
+
+### 2–5 minute demo
+
+1. Click **Load demo incident** to create a synthetic 5xx spike.
+2. Review the score, proposed rollback, and evidence in the incident card.
+3. Approve the plan, then run the simulation and confirm its completed state.
+4. Submit a custom signal from the side panel to explore the other remediation rules.
+
+The service runs locally without provider credentials. To override the storage directory, copy `.env.example` to `.env` and edit `OPSPILOT_DATA_DIR`.
 
 With Docker: `docker compose up --build`.
 
@@ -56,6 +65,7 @@ Anomaly score combines normalized deviation from the supplied baseline with seve
 ```bash
 pip install -e '.[dev]'
 ruff check .
+ruff format --check .
 pytest
 ```
 

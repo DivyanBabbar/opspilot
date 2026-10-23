@@ -1,0 +1,8 @@
+.docs-link { color: #718078; font-size: 12px; text-decoration: none; }
+.docs-link:hover { color: #4d7948; }
+.status-message { min-height: 38px; display: flex; align-items: center; margin: 0 0 14px; padding: 9px 12px; border: 1px solid #dfe4da; border-radius: 6px; background: #f9faf6; color: #657754; font-size: 12px; }
+.status-message[data-state="busy"] { border-color: #dfe5ee; background: #f6f8fb; color: #64768a; }
+.status-message[data-state="error"] { border-color: #ead1c9; background: #fff8f5; color: #9c5141; }
+button:disabled { opacity: .55; cursor: wait; }
+:focus-visible { outline: 3px solid #8eae4c; outline-offset: 3px; }
+@media (max-width: 780px) { .docs-link { display: none; } }
